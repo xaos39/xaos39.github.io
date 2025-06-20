@@ -1,6 +1,6 @@
 // Конфигурация Telegram бота
 const TELEGRAM_BOT_TOKEN = '7990777742:AAGfKV8pNZOZ7pa6X0behbsYcuvFFI6aypw';
-const TELEGRAM_CHAT_ID = '-4894501763';
+const TELEGRAM_CHAT_ID = '-1002504242503';
 
 // Плавная прокрутка для якорных ссылок
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
