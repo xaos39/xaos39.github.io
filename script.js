@@ -1,3 +1,7 @@
+// Конфигурация Telegram бота
+const TELEGRAM_BOT_TOKEN = '7990777742:AAGfKV8pNZOZ7pa6X0behbsYcuvFFI6aypw';
+const TELEGRAM_CHAT_ID = '-4894501763';
+
 // Плавная прокрутка для якорных ссылок
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -68,6 +72,81 @@ document.addEventListener('click', function(e) {
         if (window.scrollY < 50) {
             navbar.style.background = 'transparent';
         }
+    }
+});
+
+// Обработка формы обратной связи через Telegram бота
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const formMessage = document.getElementById('formMessage');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // Очищаем предыдущие сообщения
+    formMessage.className = 'form-message';
+    formMessage.textContent = '';
+    
+    // Проверяем заполнение полей
+    const name = formData.get('name').trim();
+    const phone = formData.get('phone').trim();
+    
+    if (!name || !phone) {
+        formMessage.textContent = 'Пожалуйста, заполните обязательные поля';
+        formMessage.className = 'form-message error';
+        return;
+    }
+    
+    // Добавляем индикатор загрузки
+    submitButton.classList.add('loading');
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Отправка...';
+    
+    try {
+        // Формируем текст сообщения
+        const messageText = `📌 <b>Новая заявка с сайта</b>\n\n` +
+                           `👤 <b>Имя:</b> ${name}\n` +
+                           `📱 <b>Телефон:</b> ${phone}\n` +
+                           `✉️ <b>Сообщение:</b> ${formData.get('message') || 'Не указано'}\n\n` +
+                           `🕒 <i>${new Date().toLocaleString()}</i>`;
+        
+        // Отправляем в Telegram
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: messageText,
+                parse_mode: 'HTML'
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.ok) {
+            formMessage.textContent = '✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.';
+            formMessage.className = 'form-message success';
+            form.reset();
+        } else {
+            throw new Error(result.description || 'Ошибка при отправке');
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+        formMessage.textContent = '❌ Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.';
+        formMessage.className = 'form-message error';
+    } finally {
+        // Убираем индикатор загрузки
+        submitButton.classList.remove('loading');
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Отправить';
+        
+        // Скрываем сообщение через 5 секунд
+        setTimeout(() => {
+            formMessage.className = 'form-message';
+        }, 5000);
     }
 });
 

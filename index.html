@@ -144,12 +144,13 @@
                 </div>
                 <div class="contact-form">
                     <h3>Оставьте заявку</h3>
-                    <form>
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="tel" placeholder="Ваш телефон" required>
-                        <textarea placeholder="Ваше сообщение"></textarea>
+                    <form id="contactForm">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                        <textarea name="message" placeholder="Ваше сообщение"></textarea>
                         <button type="submit" class="btn">Отправить</button>
                     </form>
+                    <div id="formMessage" class="form-message"></div>
                 </div>
             </div>
         </div>
