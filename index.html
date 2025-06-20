@@ -1,7 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АкваБур - Профессиональное бурение скважин</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <!-- Навигационное меню -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#home" class="logo">Аква<span>Бур</span></a>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#pricing">Цены</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главный баннер -->
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Профессиональное бурение скважин</h1>
+            <p>Качественная вода в вашем доме с гарантией 10 лет</p>
+            <a href="#contact" class="btn">Заказать звонок</a>
+        </div>
+    </header>
+
+    <!-- Услуги -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <i class="fas fa-tint"></i>
+                    <h3>Бурение скважин</h3>
+                    <p>Бурение скважин на воду любой глубины с использованием современного оборудования.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Обустройство</h3>
+                    <p>Полный комплекс работ по обустройству скважины под ключ.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-filter"></i>
+                    <h3>Очистка воды</h3>
+                    <p>Установка систем фильтрации для чистой и безопасной воды.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-tools"></i>
+                    <h3>Ремонт скважин</h3>
+                    <p>Качественный ремонт и обслуживание существующих скважин.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2>О нашей компании</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Мы занимаемся бурением скважин более 15 лет. Наши специалисты имеют огромный опыт работы с различными типами грунтов.</p>
+                    <p>Используем только качественные материалы и современное оборудование. Гарантия на все виды работ.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Лицензированная деятельность</li>
+                        <li><i class="fas fa-check"></i> Опытные специалисты</li>
+                        <li><i class="fas fa-check"></i> Современное оборудование</li>
+                        <li><i class="fas fa-check"></i> Гарантия качества</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="images/team-photo.jpg" alt="Наша команда">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цены -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2>Наши цены</h2>
+            <div class="pricing-table">
+                <div class="pricing-card">
+                    <h3>Скважина "Эконом"</h3>
+                    <div class="price">от 35 000 ₽</div>
+                    <ul>
+                        <li>Глубина до 30 метров</li>
+                        <li>Труба ПНД 125 мм</li>
+                        <li>Сетчатый фильтр</li>
+                        <li>Гарантия 1 год</li>
+                    </ul>
+                    <a href="#contact" class="btn">Заказать</a>
+                </div>
+                <div class="pricing-card popular">
+                    <span class="popular-badge">Популярно</span>
+                    <h3>Скважина "Стандарт"</h3>
+                    <div class="price">от 55 000 ₽</div>
+                    <ul>
+                        <li>Глубина до 60 метров</li>
+                        <li>Труба нПВХ 125 мм</li>
+                        <li>Щелевой фильтр</li>
+                        <li>Гарантия 3 года</li>
+                    </ul>
+                    <a href="#contact" class="btn">Заказать</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Скважина "Премиум"</h3>
+                    <div class="price">от 85 000 ₽</div>
+                    <ul>
+                        <li>Глубина до 120 метров</li>
+                        <li>Труба нПВХ 160 мм</li>
+                        <li>Фильтр с напылением</li>
+                        <li>Гарантия 10 лет</li>
+                    </ul>
+                    <a href="#contact" class="btn">Заказать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Буровая, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@akvabur.ru</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 18:00</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Оставьте заявку</h3>
+                    <form>
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="tel" placeholder="Ваш телефон" required>
+                        <textarea placeholder="Ваше сообщение"></textarea>
+                        <button type="submit" class="btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home" class="logo">Аква<span>Бур</span></a>
+                    <p>Качественное бурение скважин с 2008 года</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#pricing">Цены</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 АкваБур. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
