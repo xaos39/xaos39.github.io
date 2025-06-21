@@ -164,3 +164,41 @@ document.getElementById('contactForm').addEventListener('submit', async function
         }, 5000);
     }
 });
+// Функция для показа модального окна
+function showPhoneModal() {
+    const modal = document.getElementById('phoneModal');
+    modal.style.display = 'block';
+    
+    // Закрытие при клике вне окна
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closePhoneModal();
+        }
+    });
+}
+
+// Функция для закрытия модального окна
+function closePhoneModal() {
+    document.getElementById('phoneModal').style.display = 'none';
+}
+
+// Функция для копирования номера
+function copyPhoneNumber() {
+    const phoneNumber = '+79205621808';
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+        alert('Номер скопирован в буфер обмена!');
+    }).catch(err => {
+        console.error('Ошибка копирования: ', err);
+    });
+}
+
+// Обработчики для кнопок WhatsApp
+document.querySelectorAll('.fa-whatsapp').forEach(icon => {
+    icon.addEventListener('click', function(e) {
+        e.preventDefault();
+        showPhoneModal();
+    });
+});
+
+// Обработчик для кнопки закрытия
+document.querySelector('.close-modal').addEventListener('click', closePhoneModal);

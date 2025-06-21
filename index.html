@@ -12,13 +12,13 @@
     <nav id="navbar">
         <div class="container">
             <a href="#home" class="logo">Источник<span></span></a>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#pricing">Цены</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
+<ul>
+    <li><a href="#home">Главная</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#gallery">Наши работы</a></li>
+    <li><a href="#contact">Контакты</a></li>
+</ul>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -29,8 +29,11 @@
     <header id="home" class="hero">
         <div class="container">
             <h1>Профессиональное бурение скважин</h1>
-            <p>Качественная вода в вашем доме с гарантией</p>
-            <a href="#contact" class="btn">Заказать звонок</a>
+            <br>✔ Используем только сертифицированные оборудование и материалы!
+            <br>✔ Гарантия на работу и оборудование!
+            <br>✔ Обслуживание, промывка и другие услуги!
+            <br>
+            <br><a href="#contact" class="btn">Заказать звонок</a>
         </div>
     </header>
 
@@ -87,8 +90,8 @@
         </div>
     </section>
 
-    <!-- Цены -->
-    <section id="pricing" class="section">
+    <!-- Цены --> // ВРЕМЕННО ВЫКЛЮЧЕН
+ <!--   <section id="pricing" class="section">
         <div class="container">
             <h2>Наши цены</h2>
             <div class="pricing-table">
@@ -128,58 +131,137 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
-    <!-- Контакты -->
-    <section id="contact" class="section bg-light">
-        <div class="container">
-            <h2>Контакты</h2>
-            <div class="contact-content">
+    <!-- Галерея работ -->
+<section id="gallery" class="section">
+    <div class="container">
+        <h2>Наши работы</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/xaos39/xaos39.github.io/main/work1.jpg" alt="Бурение скважины">
+                <div class="gallery-caption">Бурение скважины на воду</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/xaos39/xaos39.github.io/main/work2.jpg" alt="Обустройство скважины">
+                <div class="gallery-caption">Обустройство скважины</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/xaos39/xaos39.github.io/main/work3.jpg" alt="Установка насоса">
+                <div class="gallery-caption">Установка насосного оборудования</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://raw.githubusercontent.com/xaos39/xaos39.github.io/main/work4.jpg" alt="Ремонт скважины">
+                <div class="gallery-caption">Ремонт существующей скважины</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Обновленная секция контактов -->
+<section id="contact" class="section bg-light">
+    <div class="container">
+        <h2>Контакты</h2>
+        <div class="contact-content">
+            <div class="contact-info-wrapper">
                 <div class="contact-info">
                     <h3>Свяжитесь с нами</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> г. Старый Оскол</p>
-                    <p><i class="fas fa-phone"></i> +7 (920) 562-18-08</p>
-                    <p><i class="fas fa-envelope"></i> t.me/istok31</p>
-                    <p><i class="fas fa-clock"></i> Принимаем заявки ежедневно</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <div class="contact-label">Адрес:</div>
+                                <div class="contact-value">г. Старый Оскол</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <div class="contact-label">Телефон:</div>
+                                <div class="contact-value">+7 (920) 562-18-08</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-paper-plane"></i>
+                            <div class="contact-text">
+                                <div class="contact-label">Telegram:</div>
+                                <div class="contact-value">@istok31</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <div class="contact-label">Режим работы:</div>
+                                <div class="contact-value">Ежедневно 8:00-20:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <div class="social-title">Мы в соцсетях:</div>
+                        <div class="social-icons-minimal">
+                            <a href="#" class="social-icon-minimal" aria-label="ВКонтакте">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="//t.me/istok31" class="social-icon-minimal" aria-label="Telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="javascript:void(0)" class="social-icon-minimal"><i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="contact-form-wrapper">
                 <div class="contact-form">
                     <h3>Оставьте заявку</h3>
+                    <p class="form-description">Заполните форму и мы свяжемся с вами при первой возможности!</p>
+                    
                     <form id="contactForm">
-                        <input type="text" name="name" placeholder="Ваше имя" required>
-                        <input type="tel" name="phone" id="phoneInput" placeholder="+7 (___) ___-__-__" required>
-                        <textarea name="message" placeholder="Ваше сообщение"></textarea>
-                        <button type="submit" class="btn">Отправить</button>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phoneInput" name="phone" placeholder="Ваш номер" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Что вас интересует"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            Отправить заявку
+                        </button>
                     </form>
-                    <div id="formMessage" class="form-message"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Футер -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="#home" class="logo">ИСТОЧНИК<span></span></a>
-                    <p>Качественное бурение скважин</p>
+                    <a href="#home" class="logo">ИСТОЧНИК</a>
+                    <p>Бурение и обслуживание скважин</p>
                 </div>
                 <div class="footer-links">
                     <h3>Быстрые ссылки</h3>
                     <ul>
-                        <li><a href="#home">Главная</a></li>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#pricing">Цены</a></li>
-                        <li><a href="#contact">Контакты</a></li>
-                    </ul>
+    <li><a href="#home">Главная</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#gallery">Наши работы</a></li>
+    <li><a href="#contact">Контакты</a></li>
+</ul>
                 </div>
                 <div class="footer-social">
                     <h3>Мы в соцсетях</h3>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-vk"></i></a>
                         <a href="//t.me/istok31"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="javascript:void(0)" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -188,7 +270,19 @@
             </div>
         </div>
     </footer>
-
+<!-- Модальное окно для телефона -->
+<div id="phoneModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Наш номер телефона</h3>
+        <p class="modal-phone">+7 (920) 562-18-08</p>
+        <div class="modal-actions">
+            <a href="tel:+79205621808" class="btn-call">Позвонить</a>
+            <button class="btn-copy" onclick="copyPhoneNumber()">Скопировать номер</button>
+        </div>
+    </div>
+</div>
     <script src="script.js"></script>
+    
 </body>
 </html>
