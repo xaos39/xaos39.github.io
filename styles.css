@@ -534,3 +534,15 @@ footer {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+
+/* Стили для поля с телефоном */
+#phoneInput {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+#phoneInput::placeholder {
+    color: #aaa;
+    opacity: 1;
+}

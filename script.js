@@ -75,6 +75,12 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// Маска для телефона
+document.getElementById('phoneInput').addEventListener('input', function(e) {
+    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+    e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+});
+
 // Обработка формы обратной связи через Telegram бота
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -83,6 +89,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const formData = new FormData(form);
     const formMessage = document.getElementById('formMessage');
     const submitButton = form.querySelector('button[type="submit"]');
+    const phoneInput = document.getElementById('phoneInput');
     
     // Очищаем предыдущие сообщения
     formMessage.className = 'form-message';
@@ -91,10 +98,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
     // Проверяем заполнение полей
     const name = formData.get('name').trim();
     const phone = formData.get('phone').trim();
+    const phoneNumber = phone.replace(/\D/g, '');
     
-    if (!name || !phone) {
-        formMessage.textContent = 'Пожалуйста, заполните обязательные поля';
+    if (!name) {
+        formMessage.textContent = 'Пожалуйста, введите ваше имя';
         formMessage.className = 'form-message error';
+        return;
+    }
+    
+    if (!phone || phoneNumber.length !== 11) {
+        formMessage.textContent = 'Пожалуйста, введите корректный номер телефона';
+        formMessage.className = 'form-message error';
+        phoneInput.focus();
         return;
     }
     
@@ -148,9 +163,4 @@ document.getElementById('contactForm').addEventListener('submit', async function
             formMessage.className = 'form-message';
         }, 5000);
     }
-});
-
-// Анимация при загрузке страницы
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
 });
