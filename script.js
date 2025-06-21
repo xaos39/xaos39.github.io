@@ -77,11 +77,48 @@ document.addEventListener('click', function(e) {
 
 // Маска для телефона
 document.getElementById('phoneInput').addEventListener('input', function(e) {
-    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-    e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+    // Удаляем все нецифровые символы
+    let phone = e.target.value.replace(/\D/g, '');
+    
+    // Ограничиваем длину номера (1 - код страны, 10 цифр номера)
+    phone = phone.substring(0, 11);
+    
+    // Форматируем номер
+    let formattedPhone = '+7';
+    if (phone.length > 1) {
+        formattedPhone += ' (' + phone.substring(1, 4);
+    }
+    if (phone.length > 4) {
+        formattedPhone += ') ' + phone.substring(4, 7);
+    }
+    if (phone.length > 7) {
+        formattedPhone += '-' + phone.substring(7, 9);
+    }
+    if (phone.length > 9) {
+        formattedPhone += '-' + phone.substring(9, 11);
+    }
+    
+    // Устанавливаем отформатированное значение
+    e.target.value = formattedPhone;
 });
 
-// Обработка формы обратной связи через Telegram бота
+// Добавим обработчик для предотвращения ввода нецифровых символов
+document.getElementById('phoneInput').addEventListener('keydown', function(e) {
+    // Разрешаем: backspace, delete, tab, escape, enter, стрелки
+    if ([46, 8, 9, 27, 13, 110].includes(e.keyCode) || 
+        (e.keyCode === 65 && e.ctrlKey === true) || // Ctrl+A
+        (e.keyCode >= 35 && e.keyCode <= 39)) { // Home, End, стрелки
+        return;
+    }
+    
+    // Запрещаем все, кроме цифр
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+    }
+});
+
+
+// TELEGRAM
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -107,7 +144,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     }
     
     if (!phone || phoneNumber.length !== 11) {
-        formMessage.textContent = 'Пожалуйста, введите корректный номер телефона';
+        formMessage.textContent = 'Пожалуйста, введите корректный номер телефона (11 цифр)';
         formMessage.className = 'form-message error';
         phoneInput.focus();
         return;
@@ -116,7 +153,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     // Добавляем индикатор загрузки
     submitButton.classList.add('loading');
     submitButton.disabled = true;
-    submitButton.innerHTML = 'Отправка...';
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
     
     try {
         // Формируем текст сообщения
@@ -156,26 +193,9 @@ document.getElementById('contactForm').addEventListener('submit', async function
         // Убираем индикатор загрузки
         submitButton.classList.remove('loading');
         submitButton.disabled = false;
-        submitButton.innerHTML = 'Отправить';
-        
-        // Скрываем сообщение через 5 секунд
-        setTimeout(() => {
-            formMessage.className = 'form-message';
-        }, 5000);
+        submitButton.innerHTML = 'Отправить заявку';
     }
 });
-// Функция для показа модального окна
-function showPhoneModal() {
-    const modal = document.getElementById('phoneModal');
-    modal.style.display = 'block';
-    
-    // Закрытие при клике вне окна
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closePhoneModal();
-        }
-    });
-}
 
 // Функция для закрытия модального окна
 function closePhoneModal() {
