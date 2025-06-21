@@ -120,7 +120,7 @@ document.getElementById('phoneInput').addEventListener('keydown', function(e) {
 
 // TELEGRAM
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+    e.preventDefault(); // Предотвращаем стандартную отправку формы
     
     const form = e.target;
     const formData = new FormData(form);
@@ -140,28 +140,28 @@ document.getElementById('contactForm').addEventListener('submit', async function
     if (!name) {
         formMessage.textContent = 'Пожалуйста, введите ваше имя';
         formMessage.className = 'form-message error';
-        return;
+        return false; // Возвращаем false для предотвращения отправки
     }
     
     if (!phone || phoneNumber.length !== 11) {
         formMessage.textContent = 'Пожалуйста, введите корректный номер телефона (11 цифр)';
         formMessage.className = 'form-message error';
         phoneInput.focus();
-        return;
+        return false;
     }
     
     // Добавляем индикатор загрузки
-    submitButton.classList.add('loading');
+    const originalButtonText = submitButton.innerHTML;
     submitButton.disabled = true;
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
     
     try {
         // Формируем текст сообщения
         const messageText = `📌 <b>Новая заявка с сайта</b>\n\n` +
-                           `👤 <b>Имя:</b> ${name}\n` +
-                           `📱 <b>Телефон:</b> ${phone}\n` +
-                           `✉️ <b>Сообщение:</b> ${formData.get('message') || 'Не указано'}\n\n` +
-                           `🕒 <i>${new Date().toLocaleString()}</i>`;
+                         `👤 <b>Имя:</b> ${name}\n` +
+                         `📱 <b>Телефон:</b> ${phone}\n` +
+                         `✉️ <b>Сообщение:</b> ${formData.get('message') || 'Не указано'}\n\n` +
+                         `🕒 <i>${new Date().toLocaleString()}</i>`;
         
         // Отправляем в Telegram
         const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -190,11 +190,12 @@ document.getElementById('contactForm').addEventListener('submit', async function
         formMessage.textContent = '❌ Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.';
         formMessage.className = 'form-message error';
     } finally {
-        // Убираем индикатор загрузки
-        submitButton.classList.remove('loading');
+        // Восстанавливаем кнопку
         submitButton.disabled = false;
-        submitButton.innerHTML = 'Отправить заявку';
+        submitButton.innerHTML = originalButtonText;
     }
+    
+    return false; // Предотвращаем перезагрузку страницы
 });
 
 // Функция для закрытия модального окна
