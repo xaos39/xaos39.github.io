@@ -9,6 +9,14 @@
     --text-light: #7f8c8d;
 }
 
+@font-face {
+    font-family: 'Widock';
+    src: url('fonts/Widock-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -29,10 +37,6 @@ body {
 }
 
 section {
-    padding: 80px 0;
-}
-
-.section {
     padding: 80px 0;
 }
 
@@ -115,9 +119,10 @@ a {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
 
 .logo span {
@@ -139,6 +144,17 @@ a {
 
 #navbar ul li a:hover {
     color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  #navbar ul.active {
+    display: flex;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
 }
 
 .hamburger {
@@ -286,85 +302,12 @@ a {
     border-bottom: 1px solid #eee;
 }
 
-/* Контакты - полностью переработано */
+/* Контакты */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     align-items: start;
-}
-
-.contact-card {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.contact-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    color: var(--dark-color);
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.contact-info h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--primary-color);
-}
-
-.contact-details {
-    margin-bottom: 30px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.contact-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--light-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
-.contact-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-label {
-    font-weight: 600;
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: 3px;
-}
-
-.contact-value {
-    color: var(--dark-color);
-    font-size: 1rem;
-}
-
-/* Обновленные стили для блока контактов */
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
 }
 
 .contact-info-wrapper {
@@ -426,7 +369,7 @@ a {
     font-size: 1rem;
 }
 
-/* Минималистичные соцсети */
+/* Соцсети */
 .social-links {
     margin-top: 30px;
     padding-top: 20px;
@@ -446,9 +389,9 @@ a {
 
 .social-icon-minimal {
     color: var(--primary-color);
-    font-size: 2.0rem; /* Увеличили в 2 раза (было 1.3rem) */
+    font-size: 2.0rem;
     transition: all 0.2s ease;
-    width: 48px; /* Увеличили область клика */
+    width: 48px;
     height: 48px;
     display: flex;
     align-items: center;
@@ -534,32 +477,6 @@ a {
 
 .btn-submit:hover {
     background: var(--secondary-color);
-}
-
-/* Адаптивность */
-@media (max-width: 992px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-info-wrapper {
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 576px) {
-    .contact-info-wrapper,
-    .contact-form-wrapper {
-        padding: 20px;
-    }
-    
-    .contact-item {
-        flex-direction: column;
-    }
-    
-    .contact-item i {
-        margin-bottom: 5px;
-    }
 }
 
 /* Футер */
@@ -657,10 +574,6 @@ footer {
     to { opacity: 1; }
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
 /* Адаптивность */
 @media (max-width: 992px) {
     .about-content,
@@ -671,16 +584,13 @@ footer {
     .about-image {
         order: -1;
     }
-    
-    .contact-card {
-        margin-bottom: 30px;
-    }
 }
 
+/* Мобильное меню - исправленная версия */
 @media (max-width: 768px) {
     #navbar ul {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
@@ -688,6 +598,10 @@ footer {
         flex-direction: column;
         padding: 20px 0;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        height: auto;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
     }
 
     #navbar ul.active {
@@ -697,10 +611,19 @@ footer {
     #navbar ul li {
         margin: 10px 0;
         text-align: center;
+        width: 100%;
+    }
+
+    #navbar ul li a {
+        display: block;
+        padding: 15px;
+        margin: 0;
+        border-bottom: 1px solid #f0f0f0;
     }
 
     .hamburger {
         display: block;
+        z-index: 1000;
     }
 
     .hero h1 {
@@ -709,20 +632,6 @@ footer {
 
     section {
         padding: 60px 0;
-    }
-    
-    .social-platforms {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .social-btn {
-        padding: 10px 15px;
-    }
-    
-    .social-btn span {
-        display: none;
     }
 }
 
@@ -751,6 +660,7 @@ footer {
         margin-bottom: 10px;
     }
 }
+
 /* Галерея работ */
 .gallery-grid {
     display: grid;
@@ -765,6 +675,9 @@ footer {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    display: block;
+    color: inherit;
+    text-decoration: none;
 }
 
 .gallery-item:hover {
@@ -811,7 +724,8 @@ footer {
         height: 200px;
     }
 }
-/* Стили для модального окна */
+
+/* Модальное окно */
 .modal {
     display: none;
     position: fixed;
@@ -861,6 +775,12 @@ footer {
     display: flex;
     gap: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-actions > * {
+    flex: 1;
+    min-width: 120px;
 }
 
 .btn-call {
@@ -891,11 +811,25 @@ footer {
     background: #ddd;
 }
 
-/* Анимация появления */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.btn-whatsapp {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    text-decoration: none;
+    transition: all 0.3s;
 }
+
+.btn-whatsapp:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+}
+
+/* Сообщения формы */
 .form-message {
     padding: 10px;
     margin: 15px 0;
@@ -921,4 +855,360 @@ footer {
 .btn-submit.loading {
     opacity: 0.7;
     pointer-events: none;
+}
+
+/* Кнопка "Наверх" */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.back-to-top a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Логотип */
+.logo-img {
+    height: 42px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+.logo-text {
+    font-family: 'Widock', 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    letter-spacing: 1.5px;
+    line-height: 1;
+    margin-top: 3px;
+}
+
+.logo:hover .logo-text {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    .logo-img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    .logo-img {
+        height: 30px;
+    }
+}
+
+/* Отзывы */
+#reviews {
+    background-color: #f8f9fa;
+}
+
+.reviews-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+    margin-bottom: 20px;
+}
+
+.review-author h4 {
+    margin: 0;
+    color: var(--dark-color);
+    font-size: 1.2rem;
+}
+
+.review-author span {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.review-content {
+    margin-bottom: 20px;
+}
+
+.review-content p {
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    position: relative;
+}
+
+.review-content p::before,
+.review-content p::after {
+    content: '"';
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+    line-height: 0;
+}
+
+.review-rating {
+    color: #ffc107;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .reviews-slider {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .review-card {
+        padding: 20px;
+    }
+}
+
+/* Кнопки в герое */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn-avito {
+    background-color: #3665f3;
+    border: 2px solid #3665f3;
+}
+
+.btn-avito:hover {
+    background-color: #2a56e0;
+    transform: translateY(-3px);
+}
+
+.btn-avito i {
+    margin-right: 8px;
+}
+
+@media (max-width: 576px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}
+
+/* Блок Авито */
+.avito-redirect-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.avito-card {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.avito-icon {
+    font-size: 4rem;
+    color: #3665f3;
+    margin-bottom: 20px;
+}
+
+.avito-card h3 {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.avito-card p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.avito-features {
+    margin: 30px 0;
+    text-align: left;
+}
+
+.avito-feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: var(--light-color);
+    border-radius: 8px;
+}
+
+.avito-feature i {
+    color: #3665f3;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 24px;
+    text-align: center;
+}
+
+.avito-feature span {
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.btn-avito-large {
+    display: inline-block;
+    background: #3665f3;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-avito-large:hover {
+    background: #2a56e0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(54, 101, 243, 0.3);
+}
+
+.btn-avito-large i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.avito-icon-large {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avito-icon-large img {
+    width: 80px;
+    height: 80px;
+}
+
+@media (max-width: 768px) {
+    .avito-redirect-wrapper {
+        padding: 30px 20px;
+    }
+    
+    .avito-icon {
+        font-size: 3rem;
+    }
+    
+    .avito-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .avito-card p {
+        font-size: 1rem;
+    }
+    
+    .btn-avito-large {
+        padding: 14px 25px;
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .avito-feature {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .avito-feature i {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .avito-feature span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Анимация для мобильного меню */
+#navbar ul {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    #navbar ul {
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    #navbar ul.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
