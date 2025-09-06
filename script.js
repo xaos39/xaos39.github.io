@@ -1,4 +1,4 @@
-// Плавная прокрутка для якорных ссылок
+// Плавная прокрутка для якорных ссылок - исправленная версия
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -16,14 +16,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             if (navList.classList.contains('active')) {
                 navList.classList.remove('active');
                 hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-                navbar.style.background = 'white';
+                // Восстанавливаем прокрутку перед скроллом
+                document.body.style.overflow = '';
+                
+                // Небольшая задержка для закрытия меню перед скроллом
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            } else {
+                // Прокрутка к элементу
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
             }
-            
-            // Прокрутка к элементу
-            window.scrollTo({
-                top: targetElement.offsetTop - 70,
-                behavior: 'smooth'
-            });
         }
     });
 });
@@ -62,21 +71,24 @@ document.getElementById('hamburger').addEventListener('click', function(e) {
     }
 });
 
-// Закрытие меню при клике на ссылку в мобильном меню
+// Закрытие меню при клике на ссылку в мобильном меню - исправленная версия
 document.querySelectorAll('#navbar ul li a').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(e) {
         const navList = document.querySelector('#navbar ul');
         const hamburger = document.getElementById('hamburger');
         const navbar = document.getElementById('navbar');
         
         if (navList.classList.contains('active')) {
-            navList.classList.remove('active');
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-            if (window.scrollY < 50) {
-                navbar.style.background = 'transparent';
-            }
-            // Восстанавливаем прокрутку
-            document.body.style.overflow = '';
+            // Не закрываем меню сразу - даем плавной прокрутке обработать клик
+            setTimeout(() => {
+                navList.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                if (window.scrollY < 50) {
+                    navbar.style.background = 'transparent';
+                }
+                // Восстанавливаем прокрутку
+                document.body.style.overflow = '';
+            }, 300); // Задержка для завершения анимации скролла
         }
     });
 });
