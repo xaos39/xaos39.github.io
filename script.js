@@ -356,3 +356,17 @@ document.addEventListener('keydown', function(e) {
 document.querySelector('.modal-content').addEventListener('click', function(e) {
     e.stopPropagation();
 });
+
+
+// Добавьте в script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const heroContent = document.querySelector('.hero-content');
+    heroContent.style.opacity = '0';
+    heroContent.style.transform = 'translateY(50px)';
+
+    setTimeout(() => {
+        heroContent.style.transition = 'all 1s ease';
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+    }, 100);
+});

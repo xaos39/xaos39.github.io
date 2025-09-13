@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">(function(m,e,t,r,i,k,a){         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};         m[i].l=1*new Date();         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104105678', 'ym');      ym(104105678, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});</script> <noscript><div><img src="https://mc.yandex.ru/watch/104105678" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    <script type="text/javascript">(function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) }; m[i].l = 1 * new Date(); for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } } k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a) })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=104105678', 'ym'); ym(104105678, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", accurateTrackBounce: true, trackLinks: true });</script> <noscript><div><img src="https://mc.yandex.ru/watch/104105678" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
     <!-- Навигационное меню -->
     <nav id="navbar">
         <div class="container">
@@ -37,25 +37,68 @@
         </div>
     </nav>
 
-    <!-- Главный баннер -->
+    <!-- Главный баннер hero section -->
     <header id="home" class="hero">
         <div class="container">
-            <h1>Профессиональное бурение скважин</h1>
-            <h2><br>✔ Используем только сертифицированные оборудование и материалы!
-            <br>✔ Гарантия на работу и оборудование!
-            <br>✔ Обслуживание, промывка и другие услуги!
-            <br>✔ Готовая скважина за 2 дня!</h2>
-            <br>
-            <br>
-            <div class="hero-buttons">
-                <a href="javascript:void(0)" class="btn" onclick="showPhoneModal()">Связаться с нами</a>
-                <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433"
-                   target="_blank"
-                   class="btn btn-avito">
-                    Мы на Авито
-                </a>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Профессиональное</span>
+                    <span class="gradient-text">бурение скважин</span>
+                </h1>
+
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Готовая скважина за 2 дня!</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Сертифицированные материалы</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Гарантия на работу и оборудование</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Обслуживание и промывка</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="javascript:void(0)" class="btn btn-primary" onclick="showPhoneModal()">
+                        <i class="fas fa-phone"></i>
+                        Связаться с нами
+                    </a>
+                    <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433"
+                       target="_blank"
+                       class="btn btn-secondary">
+                        <i class="fas fa-store"></i>
+                        Мы на Авито
+                    </a>
+                </div>
             </div>
-        </div>
+
+            <!-- Декоративные элементы -->
+            <div class="hero-decoration">
+                <div class="decoration-circle circle-2"></div>
+                <div class="decoration-circle circle-3"></div>
+                <div class="decoration-circle circle-5"></div>
+
+                <!-- Новые кружочки -->
+                <div class="decoration-circle circle-4 with-text">
+
+                    <span>Работаем по Старооскольскому округу и не только!</span>
+                </div>
+                <div class="decoration-circle circle-1 with-text">
+
+                    <span>Прислушиваемся к вашим пожеланиям!</span>
+                </div>
+                <div class="decoration-circle circle-6 with-text">
+
+                    <span>Полный расчет стоимости прямо сейчас!</span>
+                </div>
+            </div>
     </header>
 
     <!-- Услуги -->
@@ -452,12 +495,12 @@
                     <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433"
                        class="modal-btn btn-avito" target="_blank">
                         <svg width="20" height="20" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
-                        <g fill="none" fill-rule="evenodd">
-                            <path fill="none" d="M0 0h90v90H0z" />
-                            <circle fill="#ffffff" cx="59" cy="59" r="16" />
-                            <circle fill="#ffffff" cx="29" cy="29" r="13" />
-                            <circle fill="#e6e6e6" cx="59" cy="29" r="10" />
-                            <circle fill="#e6e6e6" cx="28.5" cy="58.5" r="7.5" />
+                            <g fill="none" fill-rule="evenodd">
+                                <path fill="none" d="M0 0h90v90H0z" />
+                                <circle fill="#ffffff" cx="59" cy="59" r="16" />
+                                <circle fill="#ffffff" cx="29" cy="29" r="13" />
+                                <circle fill="#e6e6e6" cx="59" cy="29" r="10" />
+                                <circle fill="#e6e6e6" cx="28.5" cy="58.5" r="7.5" />
                             </g>
                         </svg>
                         <span>Авито</span>
