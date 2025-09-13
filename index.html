@@ -7,26 +7,30 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
-<link rel="preload" href="fonts/Widock-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
+    <link rel="preload" href="fonts/Widock-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="icon" href="https://xn--31-vlcakqgxj5c.xn--p1ai/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="https://xn--31-vlcakqgxj5c.xn--p1ai/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">(function(m,e,t,r,i,k,a){         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};         m[i].l=1*new Date();         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104105678', 'ym');      ym(104105678, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});</script> <noscript><div><img src="https://mc.yandex.ru/watch/104105678" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
     <!-- Навигационное меню -->
     <nav id="navbar">
         <div class="container">
             <a href="#home" class="logo">
-    <img src="logo K.png" alt="Логотип Источник" class="logo-img">
-    <span class="logo-text">ИСТОЧНИК</span>
-</a>
-<ul>
-    <li><a href="#home">Главная</a></li>
-    <li><a href="#services">Услуги</a></li>
-    <li><a href="#about">О нас</a></li>
-    <li><a href="#gallery">Наши работы</a></li>
-    <li><a href="#contact">Контакты</a></li>
-</ul>
+                <img src="logo K.png" alt="Логотип Источник" class="logo-img">
+                <span class="logo-text">ИСТОЧНИК</span>
+            </a>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#gallery">Этапы бурения</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -34,24 +38,25 @@
     </nav>
 
     <!-- Главный баннер -->
-<header id="home" class="hero">
-    <div class="container">
-        <h1>Профессиональное бурение скважин</h1>
-        <br>✔ Используем только сертифицированные оборудование и материалы!
-        <br>✔ Гарантия на работу и оборудование!
-        <br>✔ Обслуживание, промывка и другие услуги!
-        <br>
-        <br>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn">Заказать звонок</a>
-          <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433" 
-   target="_blank" 
-   class="btn btn-avito">
-    Мы на Авито
-</a>
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Профессиональное бурение скважин</h1>
+            <br>✔ Используем только сертифицированные оборудование и материалы!
+            <br>✔ Гарантия на работу и оборудование!
+            <br>✔ Обслуживание, промывка и другие услуги!
+            <br>✔ Готовая скважина за 2 дня!
+            <br>
+            <br>
+            <div class="hero-buttons">
+                <a href="javascript:void(0)" class="btn" onclick="showPhoneModal()">Связаться с нами</a>
+                <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433"
+                   target="_blank"
+                   class="btn btn-avito">
+                    Мы на Авито
+                </a>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
     <!-- Услуги -->
     <section id="services" class="section">
@@ -71,12 +76,12 @@
                 <div class="service">
                     <i class="fas fa-filter"></i>
                     <h3>Лучшие материалы</h3>
-                    <p>Используeм oбсадные трубы 125 мм из нПВX. 
+                    <p>Используeм oбсадные трубы 125 мм из нПВX.
                 </div>
                 <div class="service">
-                    <i class="fas fa-tools"></i>
-                    <h3>Прочистка</h3>
-                    <p>Качественный обслуживание существующих скважин.</p>
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Выезды по областям</h3>
+                    <p> Кликните чтобы увидеть на карте!</p>
                 </div>
             </div>
         </div>
@@ -105,185 +110,274 @@
         </div>
     </section>
 
-<section id="gallery" class="section">
-    <div class="container">
-        <h2>Наши работы</h2>
-        <div class="gallery-grid">
-    <a href="images/works/work1.jpg" class="gallery-item">
-        <img src="images/works/work1.jpg">
-        <div class="gallery-caption">Бурение скважины</div>
-    </a>
-    <a href="images/works/work2.jpg" class="gallery-item">
-        <img src="images/works/work2.jpg">
-        <div class="gallery-caption">Проверка оборудования</div>
-    </a>
-    <a href="images/works/work3.jpg" class="gallery-item">
-        <img src="images/works/work3.jpg">
-        <div class="gallery-caption">Проверка работы клиентом</div>
-    </a>
-    <a href="images/works/work4.jpg" class="gallery-item">
-        <img src="images/works/work4.jpg">
-        <div class="gallery-caption">Ваша скважина будет здесь!</div>
-    </a>
-</div>
-        </div>
-    </div>
-</section>
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Этапы бурения скважины</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">
+                Мы выполняем все работы всего за <strong style="color: var(--primary-color);">2 дня</strong> - быстро, качественно и без лишних хлопот для вас!
+            </p>
 
-<!-- Новая секция с отзывами -->
-<section id="reviews" class="section bg-light">
-    <div class="container">
-        <h2>Отзывы наших клиентов</h2>
-        <div class="reviews-slider">
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-author">
-                        <h4>Семен</h4>
-                        <span>Отзыв с сайта Авито</span>
-                    </div>
+            <!-- Новая галерея с стрелками -->
+            <div class="stages-gallery">
+                <div class="gallery-item">
+                    <a href="images/works/work1.jpg" title="Подготовка площадки и начало бурения">
+                        <img src="images/works/work1.jpg">
+                        <div class="gallery-caption">
+                            <p>Подготовка площадки и начало бурения</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="review-content">
-                    <p>Быстрый ответ, не оставляют одного на едине со своими вопросами. 
-Рассчитали цену заранее, обговорили все нюансы заранее, с тем учетом что я совсем не бум-бум в этом деле, мне доступным языком все доходчиво объяснили. Кроме самой работы, получил еще и кучу полезной инфы о земле, на которой стоит дом 👍
-Сама работа выполнена на отлично, я остался полностью всем доволен!</p>
+
+                <div class="stage-arrow">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
-                <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+
+                <div class="gallery-item">
+                    <a href="images/works/work2.jpg" title="Обсадка трубой">
+                        <img src="images/works/work2.jpg">
+                        <div class="gallery-caption">
+                            <p>Обсадка трубой</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="stage-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="images/works/work3.jpg" title="Установка оборудования">
+                        <img src="images/works/work3.jpg">
+                        <div class="gallery-caption">
+                            <p>Установка оборудования</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="stage-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+                <div class="gallery-item">
+                    <a href="images/works/work4.jpg" title="Ваша готовая скважина с чистой водой!">
+                        <img src="images/works/work4.jpg">
+                        <div class="gallery-caption">
+                            <p>Ваша готовая скважина с чистой водой!</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-author">
-                        <h4>Екатерина</h4>
-                        <span>Отзыв с нашего телеграмм-канала</span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>За 2 дня все установили, давно мечтала о скважине! Огромное спасибо Кириллу, вежливый и проницательный мастер помог со всеми нюансами.</p>
-                </div>
-                <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-author">
-                        <h4>Елизавета</h4>
-                        <span>Отзыв с сайта Авито</span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p>Отличная работа! Приехали вовремя, бурение прошло быстро и аккуратно. Сделали скважину, промыли, дали рекомендации по эксплуатации. Напор хороший, вода чистая.
-Рекомендую!</p>
-                </div>
-                <div class="review-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Обновленная секция контактов -->
-<section id="contact" class="section bg-light">
-    <div class="container">
-        <h2>Контакты</h2>
-        <div class="contact-content">
-            <div class="contact-info-wrapper">
-                <div class="contact-info">
-                    <h3>Свяжитесь с нами</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="contact-text">
-                                <div class="contact-label">Адрес:</div>
-                                <div class="contact-value">г. Старый Оскол</div>
+    </section>
+
+    <!-- Новая секция с отзывами -->
+    <section id="reviews" class="section bg-light">
+        <div class="container">
+            <h2>Отзывы наших клиентов</h2>
+            <div class="reviews-slider-container">
+                <div class="reviews-slider">
+                    <!-- Слайд 1 -->
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <h4>Семен</h4>
+                                    <span>Отзыв с сайта Авито</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div class="contact-text">
-                                <div class="contact-label">Телефон:</div>
-                                <div class="contact-value">+7 (920) 562-18-08</div>
+                            <div class="review-content">
+                                <p>
+                                    Быстрый ответ, не оставляют одного на едине со своими вопросами.
+                                    Рассчитали цену заранее, обговорили все нюансы заранее, с тем учетом что я совсем не бум-бум в этом деле, мне доступным языком все доходчиво объяснили. Кроме самой работы, получил еще и кучу полезной инфы о земле, на которой стоит дом 👍
+                                    Сама работа выполнена на отлично, я остался полностью всем доволен!
+                                </p>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-paper-plane"></i>
-                            <div class="contact-text">
-                                <div class="contact-label">Telegram:</div>
-                                <div class="contact-value">@istok31</div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div class="contact-text">
-                                <div class="contact-label">Режим работы:</div>
-                                <div class="contact-value">Ежедневно 8:00-20:00</div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="social-links">
-                        <div class="social-title">Мы в соцсетях:</div>
-                        <div class="social-icons-minimal">
-                            <a href="#" class="social-icon-minimal" aria-label="ВКонтакте">
-                                <i class="fab fa-vk"></i>
-                            </a>
-                            <a href="//t.me/istok31" class="social-icon-minimal" aria-label="Telegram">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a href="javascript:void(0)" class="social-icon-minimal"><i class="fab fa-whatsapp"></i>
-                            </a>
+                    <!-- Слайд 2 -->
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <h4>Екатерина</h4>
+                                    <span>Отзыв с нашего телеграмм-канала</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>За 2 дня все установили, давно мечтала о скважине! Огромное спасибо Кириллу, вежливый и проницательный мастер помог со всеми нюансами.</p>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 3 -->
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <h4>Елизавета</h4>
+                                    <span>Отзыв с сайта Авито</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>
+                                    Отличная работа! Приехали вовремя, бурение прошло быстро и аккуратно. Сделали скважину, промыли, дали рекомендации по эксплуатации. Напор хороший, вода чистая.
+                                    Рекомендую!
+                                </p>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Слайд 4 -->
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <h4>Элина</h4>
+                                    <span>Отзыв с сайта Авито</span>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p>
+                                    Большое спасибо за профессиональное и оперативное бурение скважины! Всё выполнено качественно, вода чистая, а мастера проявили высокий уровень квалификации
+                                </p>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-<!-- Красивый блок с переходом на Авито -->
-<div class="avito-redirect-wrapper">
-    <div class="avito-card">
-        <div class="avito-icon-large">
-            <img src="https://raw.githubusercontent.com/2fasvg/2fasvg.github.io/master/assets/img/logo/avito.ru/avito.ru.svg" 
-                 alt="Avito" 
-                 width="80" 
-                 height="80">
-        </div>
-        <h3>Мы на Авито</h3>
-        <div class="avito-features">
-            <div class="avito-feature">
-                <i class="fas fa-star"></i>
-                <span>Реальные отзывы клиентов</span>
-            </div>
-            <div class="avito-feature">
-                <i class="fas fa-images"></i>
-                <span>Описание, фото и видео наших работ</span>
-            </div>
-            <div class="avito-feature">
-                <i class="fas fa-percent"></i>
-                <span>Расчет цены, а так же специальные предложения</span>
+
+                <!-- Навигационные стрелки -->
+                <button class="slider-arrow slider-arrow-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow slider-arrow-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Индикаторы (точки) -->
+                <div class="slider-dots"></div>
             </div>
         </div>
-        <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433" 
-           target="_blank" 
-           class="btn btn-avito-large">
-            <i class="fab fa-avito"></i> Перейти на нашу страницу Авито
-        </a>
-    </div>
-</div>
+    </section>
+    <!-- Обновленная секция контактов -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-info-wrapper">
+                    <div class="contact-info">
+                        <h3>Свяжитесь с нами</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Адрес:</div>
+                                    <div class="contact-value">г. Старый Оскол</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Телефон:</div>
+                                    <div class="contact-value">
+                                        <a href="tel:+79205621808" style="color: inherit; text-decoration: none;">
+                                            +7 (920) 562-18-08
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-paper-plane"></i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Telegram:</div>
+                                    <div class="contact-value">
+                                        <a href="https://t.me/istok31" target="_blank" style="color: inherit; text-decoration: none;">
+                                            @istok31
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Режим работы:</div>
+                                    <div class="contact-value">Ежедневно 8:00-20:00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <div class="social-title">Мы в соцсетях:</div>
+                            <div class="social-icons-minimal">
+                                <a href="//t.me/istok31" class="social-icon-minimal" aria-label="Telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="javascript:void(0)" class="social-icon-minimal">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Красивый блок с переходом на Авито -->
+                <div class="avito-redirect-wrapper">
+                    <div class="avito-card">
+                        <div class="avito-icon-large">
+                            <img src="https://raw.githubusercontent.com/2fasvg/2fasvg.github.io/master/assets/img/logo/avito.ru/avito.ru.svg"
+                                 alt="Avito"
+                                 width="80"
+                                 height="80">
+                        </div>
+                        <h3>Мы на Авито</h3>
+                        <div class="avito-features">
+                            <div class="avito-feature">
+                                <i class="fas fa-star"></i>
+                                <span>Реальные отзывы клиентов</span>
+                            </div>
+                            <div class="avito-feature">
+                                <i class="fas fa-images"></i>
+                                <span>Описание, фото и видео наших работ</span>
+                            </div>
+                            <div class="avito-feature">
+                                <i class="fas fa-percent"></i>
+                                <span>Расчет цены, а так же специальные предложения</span>
+                            </div>
+                        </div>
+                        <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433"
+                           target="_blank"
+                           class="btn btn-avito-large">
+                            Перейти на нашу страницу Авито
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Футер -->
     <footer>
@@ -296,17 +390,16 @@
                 <div class="footer-links">
                     <h3>Быстрые ссылки</h3>
                     <ul>
-    <li><a href="#home">Главная</a></li>
-    <li><a href="#services">Услуги</a></li>
-    <li><a href="#about">О нас</a></li>
-    <li><a href="#gallery">Наши работы</a></li>
-    <li><a href="#contact">Контакты</a></li>
-</ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#gallery">Этапы бурения</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
                 </div>
                 <div class="footer-social">
                     <h3>Мы в соцсетях</h3>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-vk"></i></a>
                         <a href="//t.me/istok31"><i class="fab fa-telegram"></i></a>
                         <a href="javascript:void(0)" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
                     </div>
@@ -317,28 +410,73 @@
             </div>
         </div>
     </footer>
-<!-- Модальное окно для телефона -->
-<div id="phoneModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h3>Свяжитесь с нами</h3>
-        <p class="modal-phone">+7 (920) 562-18-08</p>
-        <div class="modal-actions">
-            <a href="tel:+79205621808" class="btn-call">Позвонить</a>
-            <a href="https://wa.me/79205621808" class="btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <button class="btn-copy" onclick="copyPhoneNumber()">Скопировать</button>
+    <!-- Модальное окно для телефона -->
+    <!-- Модальное окно для связи -->
+    <div id="phoneModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="modal-header">
+                <h3>Свяжитесь с нами</h3>
+                <p>Выберите удобный способ связи</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-phone-section">
+                    <div class="phone-number">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (920) 562-18-08</span>
+                    </div>
+                    <button class="btn-copy" onclick="copyPhoneNumber()" title="Скопировать номер">
+                        <i class="far fa-copy"></i>
+                    </button>
+                </div>
+
+                <div class="modal-buttons">
+                    <a href="tel:+79205621808" class="modal-btn btn-call">
+                        <i class="fas fa-phone"></i>
+                        <span>Позвонить</span>
+                    </a>
+
+                    <a href="https://wa.me/79205621808" class="modal-btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+
+                    <a href="https://t.me/istok31" class="modal-btn btn-telegram" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+
+                    <a href="https://www.avito.ru/staryy_oskol/predlozheniya_uslug/burenie_skvazhin_na_vodu_7611510433"
+                       class="modal-btn btn-avito" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <path fill="none" d="M0 0h90v90H0z" />
+                            <circle fill="#ffffff" cx="59" cy="59" r="16" />
+                            <circle fill="#ffffff" cx="29" cy="29" r="13" />
+                            <circle fill="#e6e6e6" cx="59" cy="29" r="10" />
+                            <circle fill="#e6e6e6" cx="28.5" cy="58.5" r="7.5" />
+                            </g>
+                        </svg>
+                        <span>Авито</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <p>Работаем ежедневно</p>
+            </div>
         </div>
     </div>
-</div>
     </div>
-</div>
+    </div>
     <script src="script.js"></script>
-    
+
     <!-- Кнопка "Наверх" -->
-<div class="back-to-top">
-    <a href="#home" title="Наверх"><i class="fas fa-arrow-up"></i></a>
-</div>
+    <div class="back-to-top">
+        <a href="#home" title="Наверх"><i class="fas fa-arrow-up"></i></a>
+    </div>
 </body>
 </html>
