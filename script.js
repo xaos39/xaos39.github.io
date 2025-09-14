@@ -370,3 +370,44 @@ document.addEventListener('DOMContentLoaded', function () {
         heroContent.style.transform = 'translateY(0)';
     }, 100);
 });
+
+// Функции для модального окна с картой
+function showMapModal() {
+    const modal = document.getElementById('mapModal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    modal.classList.remove('closing');
+}
+
+function closeMapModal() {
+    const modal = document.getElementById('mapModal');
+    modal.classList.add('closing');
+
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 300);
+}
+
+// Закрытие модального окна с картой по клику вне области
+document.addEventListener('click', function (e) {
+    const modal = document.getElementById('mapModal');
+    if (e.target === modal) {
+        closeMapModal();
+    }
+});
+
+// Закрытие по Escape
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        const mapModal = document.getElementById('mapModal');
+        if (mapModal.style.display === 'block') {
+            closeMapModal();
+        }
+    }
+});
+
+// Предотвращаем закрытие при клике на саму карту
+document.querySelector('#mapModal .modal-content').addEventListener('click', function (e) {
+    e.stopPropagation();
+});

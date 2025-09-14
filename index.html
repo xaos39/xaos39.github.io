@@ -121,10 +121,11 @@
                     <h3>Лучшие материалы</h3>
                     <p>Используeм oбсадные трубы 125 мм из нПВX.
                 </div>
-                <div class="service">
+                <div class="service" onclick="showMapModal()" style="cursor: pointer;">
                     <i class="fas fa-map-marked-alt"></i>
                     <h3>Выезды по областям</h3>
-                    <p> Кликните чтобы увидеть на карте!</p>
+                    <p>Кликните чтобы увидеть на карте!</p>
+                </div>
                 </div>
             </div>
         </div>
@@ -520,6 +521,29 @@
     <!-- Кнопка "Наверх" -->
     <div class="back-to-top">
         <a href="#home" title="Наверх"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
+    <!-- Модальное окно с картой -->
+    <div id="mapModal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-modal" onclick="closeMapModal()">
+                <i class="fas fa-times"></i>
+            </span>
+            <div class="modal-header">
+                <h3>Зона выезда наших специалистов</h3>
+            </div>
+
+            <div class="modal-body">
+                <div id="yandex-map" style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden;">
+                    <script type="text/javascript" charset="utf-8" async
+                            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab244b14afec656223647426b29d0f23406797773e16aee512baee4cdc456efe8&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+
+                <div style="margin-top: 20px; text-align: center;">
+                    <p><strong>Возможность провести работы уточняйте у нас!</strong></p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
