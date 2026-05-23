@@ -1,0 +1,23 @@
+﻿document.addEventListener('DOMContentLoaded', function(){
+  var estimateBtn = document.getElementById('estimate');
+  if (estimateBtn){
+    estimateBtn.addEventListener('click', function(){
+      var area = parseFloat(document.getElementById('area').value);
+      var out = document.getElementById('estimateResult');
+      if (!area || area <= 0){ out.textContent = 'Введите площадь (сотки)'; return; }
+      var price = 60000 + (area * 500);
+      out.textContent = 'Ориентировочная стоимость: ≈ ' + price.toLocaleString('ru-RU') + ' ₽';
+    });
+  }
+
+  // Глобальная функция для onsubmit="return submitForm(event)"
+  window.submitForm = function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    if (!name || !phone){ alert('Пожалуйста, заполните имя и телефон.'); return false; }
+    alert('Заявка принята. Мы свяжемся с вами в ближайшее время.');
+    if (e.target && typeof e.target.reset === 'function') e.target.reset();
+    return false;
+  };
+});

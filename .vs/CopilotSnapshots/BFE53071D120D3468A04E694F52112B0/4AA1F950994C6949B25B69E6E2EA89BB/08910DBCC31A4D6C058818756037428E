@@ -9,65 +9,82 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="topbar">
-      <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:8px 20px">
-        <div style="font-size:14px;color:#fff">Оперативный выезд и бесплатная консультация</div>
-        <div style="display:flex;gap:16px;align-items:center">
-          <a href="tel:+79000000000" class="topbar-phone">+7 (900) 000-00-00</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="container nav">
-      <div class="logo">
-        <div class="mark">В</div>
-        <div>
-          <div>ВодаБур</div>
-          <div style="font-size:12px;color:var(--muted)">Бурение скважин на воду</div>
-        </div>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#process">Процесс</a></li>
-          <li><a href="#prices">Цены</a></li>
-          <li><a href="#contact" class="cta">Заказать звонок</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-    <section class="hero hero-large">
-            <div class="hero-overlay">
-                <div class="container" style="display:flex;gap:36px;align-items:center;flex-wrap:wrap;padding:80px 20px">
-                    <div style="flex:1;min-width:260px">
-                        <h1 style="font-size:46px;line-height:1.05">Бурение скважин на воду под ключ — быстро, чисто, с гарантией</h1>
-                        <p style="color:var(--muted);font-size:16px;margin-top:12px;max-width:640px">Геологический выезд, точный расчёт, аккуратное бурение и полная обвязка под ключ. Работаем по области — выезд в 1–2 дня.</p>
-                        <div class="actions" style="margin-top:20px">
-                            <a class="cta" href="#contact">Оставить заявку</a>
-                            <a href="#prices" class="outline">Узнать цену</a>
-                        </div>
-
-                        <div class="trust" style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
-                            <div class="card small" style="display:flex;gap:10px;align-items:center">
-                                <div style="font-weight:700">1200+</div>
-                                <div style="color:var(--muted);font-size:13px">выполненных скважин</div>
-                            </div>
-                            <div class="card small" style="display:flex;gap:10px;align-items:center">
-                                <div style="font-weight:700">3 года</div>
-                                <div style="color:var(--muted);font-size:13px">гарантии на работы</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Карточка с формой удалена по запросу -->
+    <header>
+        <div class="container nav">
+            <div class="logo">
+                <div class="mark">В</div>
+                <div>
+                    <div>ВодаБур</div>
+                    <div style="font-size:12px;color:var(--muted)">Бурение скважин на воду</div>
                 </div>
             </div>
-        </section>
+            <nav>
+                <ul>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#process">Процесс</a></li>
+                    <li><a href="#prices">Цены</a></li>
+                    <li><a href="#contact" class="cta">Заказать звонок</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main class="container">
+        <section class="hero">
+            <div class="hero-left">
+                <h1>Бурение скважин на воду под ключ — быстро и надёжно</h1>
+                <p>Профессиональное бурение артезианских и поверхностных скважин. Геолого-техническая оценка, оборудование, гарантия на работы и сервисное обслуживание.</p>
+                <div class="actions">
+                    <a class="cta" href="#contact">Оставить заявку</a>
+                    <a href="#prices" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(7,59,76,0.06)">Узнать цену</a>
+                </div>
+
+                <div style="margin-top:20px" class="card">
+                    <div class="feature-strong">Бесплатная консультация и выезд геолога</div>
+                    <div style="color:var(--muted);margin-top:8px">Поможем подобрать место, глубину скважины и оптимальное оборудование.</div>
+                    <div class="kpi">
+                        <div>
+                            <div style="font-weight:700; font-size:20px">10+</div>
+                            <div style="font-size:12px;color:var(--muted)">лет опыта</div>
+                        </div>
+                        <div>
+                            <div style="font-weight:700; font-size:20px">1200+</div>
+                            <div style="font-size:12px;color:var(--muted)">скважин</div>
+                        </div>
+                        <div>
+                            <div style="font-weight:700; font-size:20px">3 года</div>
+                            <div style="font-size:12px;color:var(--muted)">гарантия</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-right">
+                <div class="card">
+                    <div style="font-size:14px;color:var(--muted)">Экспресс-оценка</div>
+                    <div style="font-weight:700;font-size:20px; margin-top:8px">Узнайте ориентировочную стоимость</div>
+                    <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+                        <div style="flex:1">
+                            <input id="area" placeholder="Площадь участка (сотки)" />
+                        </div>
+                        <div style="width:120px">
+                            <button id="estimate" style="width:100%">Рассчитать</button>
+                        </div>
+                    </div>
+                    <div id="estimateResult" style="margin-top:12px;color:var(--muted)">Введите данные для расчёта</div>
+                </div>
+
+                <div class="card">
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v6" stroke="#0077b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M5 12h14" stroke="#0077b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        <div>
+                            <div style="font-weight:700">Срочный выезд</div>
+                            <div style="font-size:13px;color:var(--muted)">в пределах области — 1-2 дня</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
 
         <section id="services">
             <h2>Наши услуги</h2>

@@ -1,15 +1,11 @@
-:root{--accent:#0077b6;--accent-2:#00b4d8;--dark:#073b4c;--muted:#6c7a89}
+п»ї:root{--accent:#0077b6;--accent-2:#00b4d8;--dark:#073b4c;--muted:#6c7a89}
 :root{--accent:#0077b6;--accent-2:#00b4d8;--dark:#073b4c;--muted:#6c7a89}
 *{box-sizing:border-box}
 body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; margin:0; color:var(--dark); line-height:1.45; -webkit-font-smoothing:antialiased}
 a{color:inherit; text-decoration:none}
-html,body{overflow-x:hidden}
 
 /* Topbar */
 .topbar{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff}
-
-.topbar .topbar-phone{color:#fff; font-weight:700; text-decoration:none}
-.topbar .topbar-phone:hover{text-decoration:underline}
 
 /* Header / nav */
 header{position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.92); backdrop-filter:saturate(120%) blur(6px); border-bottom:1px solid rgba(7,59,76,0.06)}
@@ -23,18 +19,8 @@ nav ul li a{padding:8px 6px; color:var(--dark); font-weight:600}
 .cta.small{padding:8px 12px;font-size:14px}
 
 /* Hero */
-.hero-large{
-  background-image:linear-gradient(180deg, rgba(1,33,45,0.85), rgba(0,86,120,0.75));
-  color:#fff;
-  position:relative;
-  /* пусть секция занимает всю доступную ширину страницы без смещений */
-  width:100%;
-  padding:0;
-}
-.hero-overlay{
-  background:linear-gradient(90deg, rgba(2,27,33,0.15), rgba(0,0,0,0.05));
-  padding:80px 0; /* вертикальные отступы для хиро-секции */
-}
+.hero-large{background-image:linear-gradient(180deg, rgba(1,33,45,0.85), rgba(0,86,120,0.75)); color:#fff}
+.hero-overlay{background:linear-gradient(90deg, rgba(2,27,33,0.15), rgba(0,0,0,0.05));}
 h1{margin:0}
 .actions{display:flex; gap:12px}
 .outline{display:inline-flex;align-items:center;border-radius:8px;padding:10px 14px;border:1px solid rgba(255,255,255,0.18);color:#fff}

@@ -62,7 +62,17 @@
                         </div>
                     </div>
 
-                    <!-- Карточка с формой удалена по запросу -->
+                    <div style="width:380px;min-width:260px">
+                        <div class="card">
+                            <div style="font-size:14px;color:var(--muted)">Экспресс-оценка</div>
+                            <div style="font-weight:700;font-size:20px; margin-top:8px">Оставьте заявку — мы перезвоним</div>
+                            <form onsubmit="return submitForm(event)" style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+                                <input id="nameTop" placeholder="Имя" required />
+                                <input id="phoneTop" placeholder="Телефон" required />
+                                <button type="submit" class="cta">Заказать обратный звонок</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

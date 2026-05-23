@@ -1,4 +1,4 @@
-:root{--accent:#0077b6;--accent-2:#00b4d8;--dark:#073b4c;--muted:#6c7a89}
+п»ї:root{--accent:#0077b6;--accent-2:#00b4d8;--dark:#073b4c;--muted:#6c7a89}
 :root{--accent:#0077b6;--accent-2:#00b4d8;--dark:#073b4c;--muted:#6c7a89}
 *{box-sizing:border-box}
 body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; margin:0; color:var(--dark); line-height:1.45; -webkit-font-smoothing:antialiased}
@@ -7,9 +7,6 @@ html,body{overflow-x:hidden}
 
 /* Topbar */
 .topbar{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff}
-
-.topbar .topbar-phone{color:#fff; font-weight:700; text-decoration:none}
-.topbar .topbar-phone:hover{text-decoration:underline}
 
 /* Header / nav */
 header{position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.92); backdrop-filter:saturate(120%) blur(6px); border-bottom:1px solid rgba(7,59,76,0.06)}
@@ -27,13 +24,13 @@ nav ul li a{padding:8px 6px; color:var(--dark); font-weight:600}
   background-image:linear-gradient(180deg, rgba(1,33,45,0.85), rgba(0,86,120,0.75));
   color:#fff;
   position:relative;
-  /* пусть секция занимает всю доступную ширину страницы без смещений */
+  /* РїСѓСЃС‚СЊ СЃРµРєС†РёСЏ Р·Р°РЅРёРјР°РµС‚ РІСЃСЋ РґРѕСЃС‚СѓРїРЅСѓСЋ С€РёСЂРёРЅСѓ СЃС‚СЂР°РЅРёС†С‹ Р±РµР· СЃРјРµС‰РµРЅРёР№ */
   width:100%;
   padding:0;
 }
 .hero-overlay{
   background:linear-gradient(90deg, rgba(2,27,33,0.15), rgba(0,0,0,0.05));
-  padding:80px 0; /* вертикальные отступы для хиро-секции */
+  padding:80px 0; /* РІРµСЂС‚РёРєР°Р»СЊРЅС‹Рµ РѕС‚СЃС‚СѓРїС‹ РґР»СЏ С…РёСЂРѕ-СЃРµРєС†РёРё */
 }
 h1{margin:0}
 .actions{display:flex; gap:12px}
