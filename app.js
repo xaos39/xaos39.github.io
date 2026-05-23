@@ -1,18 +1,17 @@
 document.addEventListener('DOMContentLoaded', function(){
-document.addEventListener('DOMContentLoaded', function(){
-  // Оценка стоимости по площади
+  // РћС†РµРЅРєР° СЃС‚РѕРёРјРѕСЃС‚Рё РїРѕ РїР»РѕС‰Р°РґРё
   var estimateBtn = document.getElementById('estimate');
   if (estimateBtn){
     estimateBtn.addEventListener('click', function(){
       var area = parseFloat(document.getElementById('area').value);
       var out = document.getElementById('estimateResult');
-      if (!area || area <= 0){ out.textContent = 'Введите площадь (сотки)'; return; }
+      if (!area || area <= 0){ out.textContent = 'Р’РІРµРґРёС‚Рµ РїР»РѕС‰Р°РґСЊ (СЃРѕС‚РєРё)'; return; }
       var price = 60000 + (area * 500);
-      out.textContent = 'Ориентировочная стоимость: ? ' + price.toLocaleString('ru-RU') + ' ?';
+      out.textContent = 'РћСЂРёРµРЅС‚РёСЂРѕРІРѕС‡РЅР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ: ? ' + price.toLocaleString('ru-RU') + ' ?';
     });
   }
 
-  // Плавный скролл при клике на якоря
+  // РџР»Р°РІРЅС‹Р№ СЃРєСЂРѕР»Р» РїСЂРё РєР»РёРєРµ РЅР° СЏРєРѕСЂСЏ
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
     anchor.addEventListener('click', function(e){
       var href = anchor.getAttribute('href');
@@ -26,15 +25,15 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  // Глобальная функция для onsubmit="return submitForm(event)" — поддерживает несколько форм
+  // Р“Р»РѕР±Р°Р»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ onsubmit="return submitForm(event)" вЂ” РїРѕРґРґРµСЂР¶РёРІР°РµС‚ РЅРµСЃРєРѕР»СЊРєРѕ С„РѕСЂРј
   window.submitForm = function(e){
     e.preventDefault();
     var form = e.target;
-    var name = form.querySelector('#name, #nameTop') ? (form.querySelector('#name') ? form.querySelector('#name').value : (form.querySelector('#nameTop') ? form.querySelector('#nameTop').value : '')) : '';
-    var phone = form.querySelector('#phone, #phoneTop') ? (form.querySelector('#phone') ? form.querySelector('#phone').value : (form.querySelector('#phoneTop') ? form.querySelector('#phoneTop').value : '')) : '';
-    if (!name || !phone){ alert('Пожалуйста, заполните имя и телефон.'); return false; }
-    // Заглушка отправки — заменить на реальный запрос на сервер
-    alert('Заявка принята. Мы свяжемся с вами в ближайшее время.');
+    var name = (form.querySelector('#name') ? form.querySelector('#name').value : (form.querySelector('#nameTop') ? form.querySelector('#nameTop').value : ''));
+    var phone = (form.querySelector('#phone') ? form.querySelector('#phone').value : (form.querySelector('#phoneTop') ? form.querySelector('#phoneTop').value : ''));
+    if (!name || !phone){ alert('РџРѕР¶Р°Р»СѓР№СЃС‚Р°, Р·Р°РїРѕР»РЅРёС‚Рµ РёРјСЏ Рё С‚РµР»РµС„РѕРЅ.'); return false; }
+    // Р—Р°РіР»СѓС€РєР° РѕС‚РїСЂР°РІРєРё вЂ” Р·Р°РјРµРЅРёС‚СЊ РЅР° СЂРµР°Р»СЊРЅС‹Р№ Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+    alert('Р—Р°СЏРІРєР° РїСЂРёРЅСЏС‚Р°. РњС‹ СЃРІСЏР¶РµРјСЃСЏ СЃ РІР°РјРё РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ.');
     if (form && typeof form.reset === 'function') form.reset();
     return false;
   };
