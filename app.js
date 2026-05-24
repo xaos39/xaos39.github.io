@@ -25,6 +25,25 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
+  // Кнопка "Наверх"
+  var backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   // Глобальная функция для onsubmit="return submitForm(event)" — поддерживает несколько форм
   window.submitForm = function(e){
     e.preventDefault();
@@ -38,4 +57,3 @@ document.addEventListener('DOMContentLoaded', function(){
     return false;
   };
 });
-

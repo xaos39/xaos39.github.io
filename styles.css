@@ -538,4 +538,43 @@ footer {
         gap: 24px;
         text-align: center
     }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
 }
+
+ /* Back to Top Button */
+ .back-to-top {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     width: 46px;
+     height: 46px;
+     background: var(--accent);
+     color: #fff;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     opacity: 0;
+     visibility: hidden;
+     transition: all 0.3s ease;
+     z-index: 1000;
+     box-shadow: 0 4px 12px rgba(0,119,182,0.3);
+     border: none;
+     cursor: pointer;
+ }
+     .back-to-top.visible {
+         opacity: 1;
+         visibility: visible;
+     }
+     .back-to-top:hover {
+         background: var(--accent-3);
+         transform: translateY(-5px);
+         box-shadow: 0 8px 16px rgba(0,119,182,0.4);
+     }
