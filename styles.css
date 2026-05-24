@@ -497,6 +497,72 @@ footer {
 
 /* Responsive */
 @media (max-width:1000px) {
+    html {
+        scroll-padding-top: 130px; /* Учет увеличенной высоты топбара + навигации на мобильных */
+    }
+
+    .topbar {
+        height: auto;
+        padding: 8px 0;
+    }
+
+    .topbar .container {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+
+    .topbar .container > div:first-child {
+        font-size: 12px;
+    }
+
+    .topbar .topbar-phone {
+        font-size: 14px;
+    }
+
+    .hero-large {
+        min-height: 100vh;
+        padding-top: 140px; /* Учитываем высоту липкого хедера на мобильных */
+        padding-bottom: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-overlay {
+        height: auto;
+        min-height: 100%;
+        background: rgba(7, 59, 76, 0.8);
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-large h1 {
+        font-size: 28px !important;
+        text-align: center;
+    }
+
+    .hero-large p {
+        font-size: 15px !important;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-large .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-large .actions .cta, 
+    .hero-large .actions .outline {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-large .trust {
+        justify-content: center;
+    }
+
     h1 {
         font-size: 2rem
     }
@@ -522,7 +588,8 @@ footer {
     }
 
     .hero-large .container {
-        padding: 30px 20px
+        padding: 30px 20px;
+        text-align: center;
     }
 
     section {
@@ -533,10 +600,68 @@ footer {
         gap: 16px
     }
 
+    footer {
+        padding: 16px 0;
+    }
+
     footer .container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        text-align: center
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .container > div:first-child {
+        display: contents;
+    }
+
+    /* Скрываем всё лишнее: описания и заголовки разделов */
+    footer .container > div:first-child > div:nth-child(2),
+    footer .container > div:nth-child(2) > div:first-child,
+    footer .container > div:nth-child(3) > div:first-child {
+        display: none;
+    }
+
+    /* Делаем контакты и соцсети горизонтальными */
+    footer .container > div:nth-child(2),
+    footer .container > div:nth-child(3) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    footer .container > div:nth-child(2) {
+        order: 2;
+    }
+
+    footer .container > div:nth-child(3) {
+        order: 3;
+    }
+
+    footer .container > div:nth-child(2) > div,
+    footer .container > div:nth-child(3) > div {
+        margin: 0 !important;
+        font-size: 0.85rem !important;
+    }
+
+    footer .container > div:first-child > div:first-child {
+        margin-bottom: 0 !important;
+        font-size: 1rem !important;
+        order: 1;
+    }
+
+    footer .container > div:first-child > div:last-child {
+        font-size: 0.7rem;
+        opacity: 0.5;
+        margin-top: 4px;
+        order: 4;
+    }
+
+    footer a {
+        display: inline-block;
+        padding: 2px 0;
     }
 
     .back-to-top {

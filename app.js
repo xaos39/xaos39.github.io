@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function(){
   var backToTop = document.getElementById('backToTop');
   if (backToTop) {
     window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 900
+     ) {
         backToTop.classList.add('visible');
       } else {
         backToTop.classList.remove('visible');
