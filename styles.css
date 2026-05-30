@@ -314,6 +314,12 @@ section {
     gap: 28px
 }
 
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 28px
+}
+
 .service {
     background: #fff;
     border-radius: 14px;
@@ -322,7 +328,7 @@ section {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-        text-align: center;
+    text-align: center;
 }
 
     .service::before {
@@ -343,6 +349,38 @@ section {
     .service h3 {
         color: var(--accent)
     }
+
+/* Services List Layout */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.services-list .service {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    gap: 32px;
+    padding: 32px;
+}
+
+.services-list .service-icon {
+    font-size: 48px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.services-list .service-content {
+    flex: 1;
+}
+
+.services-list .service h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
 
 .process {
     display: flex;
@@ -573,6 +611,17 @@ footer {
 
     .grid-3 {
         grid-template-columns: 1fr
+    }
+
+    .grid-4 {
+        grid-template-columns: 1fr
+    }
+
+    .services-list .service {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px;
     }
 
     .testimonials {
